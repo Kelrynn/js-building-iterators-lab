@@ -1,7 +1,9 @@
 var myEach = require('./myEach');
 var myMap = require('./myMap');
 var myReduce = require('./myReduce');
-var myFilter = require('./myFilter')
+var myFilter = require('./myFilter');
+var mySome = require('./mySome');
+var myEvery = require('./myEvery');
 /* *********************************************************************
   You can edit this file
   It will make use of your code in myEach.js, myMap.js and myReduce.js
@@ -35,13 +37,13 @@ console.log("the end");
 
 //myReduce
 
-var total = myReduce(numArray,function(sum, value) {
+var total = numArray.reduce(function(sum, value) {
   return sum + value;
 }, 0);
 var total2 =myReduce(numArray,function(sum, value) {
   return sum + value;
 }, 0);
-
+console.log("Testing myReduce()...")
 console.log(total);
 console.log(total2);
 
@@ -58,11 +60,39 @@ var longWords = words.filter(function(word){
 var long2 = myFilter(words, function(word){
   return word.length > 6;
 });
+console.log("Testing myFilter()...")
 
 console.log(longWords);
 console.log(long2);
 
 
+//mySome
+
+function isBiggerThan10(element, index, array) {
+  return element > 10;
+}
+console.log("Testing mySome()...")
+
+console.log([2, 5, 8, 1, 4].some(isBiggerThan10));  // false
+console.log([12, 5, 8, 1, 4].some(isBiggerThan10)); // true
+
+
+console.log(mySome([2, 5, 8, 1, 4],isBiggerThan10));  // false
+console.log(mySome([12, 5, 8, 1, 4],isBiggerThan10)); // true
+
+
+//myEvery
+
+function isBigEnough(element, index, array) { 
+  return element >= 10; 
+} 
+console.log("Testing myEvery()...")
+
+console.log([12, 5, 8, 130, 44].every(isBigEnough));   // false 
+console.log([12, 54, 18, 130, 44].every(isBigEnough)); // true
+
+console.log(myEvery([12, 5, 8, 130, 44],isBigEnough));   // false 
+console.log(myEvery([12, 54, 18, 130, 44],isBigEnough)); // true
 
 
 
