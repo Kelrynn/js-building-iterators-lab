@@ -14,23 +14,38 @@ var numArray = [0,1,10,100,1000];
 /* myEach */
 
 
-// myEach(numArray, function print(element, index, arr) {
-//    console.log('inside myEach', element, index, arr);
-//  });
+myEach(numArray, function print(element, index, arr) {
+   console.log('inside myEach', element, index, arr);
+ });
+
 
 
 
 /* myMap */
 
-// var input = ["a","b","c"];
-// var output = myMap(input, function capitalize(v){
-//     return v.toUpperCase();
-// });
-// console.log('Testing myMap');
-// console.log(output);
-// console.log(output[0] === "A" && output[1] === "B" && output[2] === "C"); // assertion
+var input = ["a","b","c"];
+var output = myMap(input, function capitalize(v){
+    return v.toUpperCase();
+});
+console.log('Testing myMap');
+console.log(output);
+console.log(output[0] === "A" && output[1] === "B" && output[2] === "C"); // assertion
 
-// console.log("the end");
+console.log("the end");
+
+//myReduce
+
+var total = myReduce(numArray,function(sum, value) {
+  return sum + value;
+}, 0);
+var total2 =myReduce(numArray,function(sum, value) {
+  return sum + value;
+}, 0);
+
+console.log(total);
+console.log(total2);
+
+
 
 
 // myFilter
