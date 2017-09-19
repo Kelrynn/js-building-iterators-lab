@@ -1,10 +1,19 @@
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ForEach
 
+var doubling = function(x){
+	return x*2;
+}
+
 function myEach(arr, callback) {
   
   //  CODE INSIDE HERE   //
+  for (let i = 0; i < arr.length; i++) {
+  	callback(arr[i],i,arr);
+  }
 
 }
+
+
 
 /*
  Best if you don't code out here.
